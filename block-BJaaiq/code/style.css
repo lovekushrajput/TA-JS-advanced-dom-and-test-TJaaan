@@ -57,13 +57,20 @@ body{
 }
 
 li{
-font-size: 4rem;
-margin: 3rem 0;
-font-weight: 700;
-list-style: disc;
+    list-style: disc;
+    font-size: 3rem;
+    margin: 4rem 0;
 }
 
-p{
+
+blockquote{
+font-size: 4rem;
+margin-bottom: 1rem;
+font-weight: 700;
+
+}
+
+cite{
     font-size: 2.5rem;
     font-weight: 400;
 }
