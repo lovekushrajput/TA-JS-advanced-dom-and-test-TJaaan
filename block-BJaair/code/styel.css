@@ -1,0 +1,132 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* custom */
+body{
+    font-family: 'Roboto', sans-serif;
+	background-color: wheat;
+}
+
+header{
+    padding: 1rem 0;
+    background-color: black;
+}
+
+
+.container{
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+
+h1{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+a{
+	margin-top: 0.2rem;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 1rem;
+}
+
+p{
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
+}
+
+/* form */
+form{
+	border: 2px solid blue;
+	display: inline-block;
+	padding: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+input{
+	padding: 0.7rem 0.2rem;
+	margin: 0.3rem 0;
+}
+
+.button{
+	background-color: black;
+	color: white;
+	border: transparent;
+	cursor: pointer;
+}
+
+
+.parent{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 85vh;
+	width: 100%;
+}
+.card{
+	display: flex;
+	justify-content: space-between;
+	
+	width: 20%;
+	border: 1px solid black;
+	display: inline-block;
+	background-color: rgb(238,109,82);
+	padding: 0.4rem;
+	margin: 0.4rem 0.3rem;
+}
+.div2{
+	 margin: 0 auto;
+	 width: 50%;
+}
