@@ -51,7 +51,12 @@ body{
     font-family: 'Roboto', sans-serif;
 	background-color: wheat;
 }
-
+h1{
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 700;
+}
 header{
     padding: 1rem 0;
     background-color: black;
@@ -62,28 +67,16 @@ header{
 	max-width: 900px;
 	margin: 0 auto;
 	padding: 0 32px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 88vh;
 }
 
-h1{
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 700;
-}
+ 
 
 
-a{
-	margin-top: 0.2rem;
-	text-transform: uppercase;
-	text-align: left;
-	font-size: 1rem;
-}
-
-p{
-	margin-top: 0.5rem;
-	font-size: 1.5rem;
-}
-
+ 
 /* form */
 form{
 	border: 2px solid blue;
@@ -92,41 +85,52 @@ form{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 100%;
+	height: 20vh;
 }
-
-input{
-	padding: 0.7rem 0.2rem;
-	margin: 0.3rem 0;
+.formControl{
+	margin: 0 auto;
+	width: 50%;
 }
-
-.button{
+form input{
+	padding: 0.4rem 0.2rem;
+}
+button{
 	background-color: black;
-	color: white;
 	border: transparent;
+	padding: 0.55rem 0;
 	cursor: pointer;
+	color: white;
 }
 
 
-.parent{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 85vh;
-	width: 100%;
+ul{
+display: flex;
+ flex-wrap: wrap;
 }
-.card{
-	display: flex;
-	justify-content: space-between;
-	
-	width: 20%;
+/* one cards */
+li{
+	background-color: tomato;
 	border: 1px solid black;
-	display: inline-block;
-	background-color: rgb(238,109,82);
-	padding: 0.4rem;
-	margin: 0.4rem 0.3rem;
+	width: 25%;
+	padding: 0.3rem;
+	margin-top: 0.5rem;
+	margin-right: 0.4rem;
 }
-.div2{
-	 margin: 0 auto;
-	 width: 50%;
+p{
+	font-size: 1.2rem;
+	margin-top: 0.3rem;
 }
+
+h2{
+	margin-top: 0.1rem;
+	margin-bottom: 0.5rem;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	text-decoration: underline;
+
+	
+}
+
+
+
+ 
