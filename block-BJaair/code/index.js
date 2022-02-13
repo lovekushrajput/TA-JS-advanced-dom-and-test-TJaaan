@@ -1,70 +1,76 @@
-let div1 = document.querySelector('.div1')
-let div2 = document.querySelector('.div2')
+let form = document.querySelector('form')
+let ul = document.querySelector('ul')
 
-function addCards(){
-    let form = document.createElement('form')
-    let title = document.createElement('input')
-    title.classList = "title"
-    title.type = 'text'
-    title.placeholder = "Enter the Title"
-    title.name = "title"
 
-    let category = document.createElement('input')
-    category.classList = "category"
-    category.placeholder = "Enter the Category"
-    category.name = "category"
-    category.type = 'text'
-    let button = document.createElement('input')
-    button.classList = "button"
-    button.type = 'submit'
-    button.value = "Add new item"
-   
-    form.append(title,category,button)
-    form.addEventListener("submit",handleClick)
-    div2.append(form)
-}
+let cardArr = 
+JSON.parse(localStorage.getItem('cards')) || 
+[]
 
-addCards()
 
-function handleClick (event){
-    event.preventDefault();
-    let valueOfTitle = event.target.title.value
-    let valueOfCategory = event.target.category.value
-console.log(event.target)
-    if(valueOfTitle === '' && valueOfCategory === ""){
-alert("please fill the form")
+form.addEventListener("submit",(event)=>{
+      event.preventDefault();
+    let title = event.target.title.value
+    let category = event.target.category.value
+    if(title ==="" && category ===""){
+        alert('Please fill the form')
     } else{
-        let divCard = document.createElement('div')
-        let a = document.createElement("a")
-        let p = document.createElement('p')
-        a.addEventListener('dblclick',handleAncher)
-        a.innerText = valueOfTitle
-        p.innerText = valueOfCategory
-    a.contentEditable=true
-        a.style.textDecoration = "underline"
-        divCard.classList="card"
-        divCard.append(a,p)
-        div1.append(divCard)
-        event.target.title.value =""
-        event.target.category.value=""
+        cardArr.push({title,category})
+        localStorage.setItem('cards',JSON.stringify(cardArr))
+        createUI(cardArr,ul)
+        event.target.title.value = ""
+        event.target.category.value = ""
     }
+})
+
+
+function createUI (data = cardArr,root=ul){
+    root.innerHTML = ""
+let fragment = new DocumentFragment()
+data.forEach((cardInfo,index) => {
+    let li = document.createElement("li")
+    let h2 = document.createElement('h2')
+    h2.innerText = cardInfo.title
+    h2.addEventListener("dblclick",(event)=>handleEdit(event,cardInfo.title,index,"title"))
+
+
+    let p = document.createElement('p')
+    p.innerText = cardInfo.category
+    p.addEventListener("dblclick",(event)=>handleEdit(event,cardInfo.category,index,"category"))
   
+
+    li.append(h2,p)
+    fragment.appendChild(li)
+})
+root.append(fragment)
 }
+createUI(cardArr,ul)
 
 
-function handleAncher(event){
+function handleEdit(event,info,id,label){
+       let elm =  event.target
+       let input = document.createElement('input')
+       input.value = info
+    console.log(label)
+        input.addEventListener("keyup",(event)=>{
+            if(event.keyCode === 13){
+                let updateValue = event.target.value
+               cardArr[id][label] = updateValue
+               createUI();
 
-    1   
-   let rt =  event.target.nodeName
-    console.log(event.target)     
-    if( an.contentEditable= true){
-        an.style.backgroundColor = "white"
-        an.style.marginTop = "0.1rem"
-        an.style.padding = "0.1rem"
-    }
-    //  else {
-    //     an.contentEditable = false
-    //     an.style.backgroundColor =  "rgb(238,109,82)"
-    // }
-    }
+               localStorage.setItem('cards',JSON.stringify(cardArr))
+            }
+        })
 
+        //    if we click outside so we are using blur event
+        input.addEventListener("blur",(event)=>{
+                let updateValue = event.target.value
+               cardArr[id][label] = updateValue
+
+               createUI();
+               localStorage.setItem('cards',JSON.stringify(cardArr))
+        })
+        let parent = event.target.parentElement
+        parent.replaceChild(input,elm)
+        }
+ 
+ 
