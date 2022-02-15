@@ -48,7 +48,7 @@ table {
 }
 /* custom */
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: rgb(1, 108, 247);
 }
 
@@ -99,8 +99,8 @@ input::placeholder{
 span{
     margin-top: 2rem;
     padding: 0 1.2rem;
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.7rem;
+    font-weight: 800;
     color: white;
     cursor: pointer;
 }
@@ -116,8 +116,16 @@ span{
     font-weight: 700;
     padding-left: 0.3rem;
     cursor: move;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box:hover::after{
+    content: "Drag me";
+    font-size: 1rem;
+    margin-right: 0.3rem;
 }
 
 .box.over {
-    border: 3px dotted rgb(46, 56, 201);
+    border: 3px dashed rgb(46, 56, 201); 
   }
