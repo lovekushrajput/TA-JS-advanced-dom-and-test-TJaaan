@@ -63,14 +63,9 @@ console.log(e.target)
                   e.stopPropagation()
                   if (dragSrcEl !== this) {
                     dragSrcEl.innerHTML = this.innerHTML;
-                    this.innerHTML = e.dataTransfer.getData('text/html');
-                    // let para = document.querySelector('p')
-                    // para.innerText = 'Drag me'
-
-                   
+                    this.innerHTML = e.dataTransfer.getData('text/html');           
                   }
-                
-                //   return false;
+                  return false;
               }
     }
 }
